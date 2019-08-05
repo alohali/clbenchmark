@@ -3,18 +3,20 @@
 #define MSTRINGIFY(...) #__VA_ARGS__
 
 static const char *stringifiedKernels =
-    #include "global_bandwidth_kernels.cl"
-    #include "compute_sp_kernels.cl"
-    #include "compute_hp_kernels.cl"
-    #include "compute_dp_kernels.cl"
-    #include "compute_integer_kernels.cl"
+#include "global_bandwidth_kernels.cl"
+#include "compute_sp_kernels.cl"
+#include "compute_hp_kernels.cl"
+#include "compute_dp_kernels.cl"
+#include "compute_integer_kernels.cl"
+#include "dw_hp_kernels.cl"
     ;
 
 static const char *stringifiedKernelsNoInt =
-    #include "global_bandwidth_kernels.cl"
-    #include "compute_sp_kernels.cl"
-    #include "compute_hp_kernels.cl"
-    #include "compute_dp_kernels.cl"
+#include "global_bandwidth_kernels.cl"
+#include "compute_sp_kernels.cl"
+#include "compute_hp_kernels.cl"
+#include "compute_dp_kernels.cl"
+#include "dw_hp_kernels.cl"
     ;
 
 #ifdef USE_STUB_OPENCL
@@ -131,15 +133,8 @@ int clPeak::runAll()
         }
 
         cl::CommandQueue queue = cl::CommandQueue(ctx, devices[d], CL_QUEUE_PROFILING_ENABLE);
-
-        runGlobalBandwidthTest(queue, prog, devInfo);
-        runComputeSP(queue, prog, devInfo);
-        runComputeHP(queue, prog, devInfo);
-        runComputeDP(queue, prog, devInfo);
-        runComputeInteger(queue, prog, devInfo);
-        runTransferBandwidthTest(queue, prog, devInfo);
-        runKernelLatency(queue, prog, devInfo);
-
+        runDW(queue, prog, devInfo);
+        
         log->print(NEWLINE);
         log->xmlCloseTag();       // device
       }
