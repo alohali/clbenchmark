@@ -1,0 +1,41 @@
+
+Platform: ARM Platform
+  Device: Mali-T860
+    Driver version  : 1.2 (Linux ARM64)
+    Compute units   : 4
+    Clock frequency : 200 MHz
+
+    Global memory bandwidth (GBPS)
+      float   : 3.72
+      float2  : 6.13
+      float4  : 7.74
+      float8  : 6.29
+      float16 : 5.84
+
+    Single-precision compute (GFLOPS)
+      float   : 24.99
+      float2  : 45.76
+      float4  : 45.53
+      float8  : 41.72
+      float16 : 46.45
+
+    Half-precision compute (GFLOPS)
+      half   : 23.20
+      half2  : 49.75
+      half4  : 98.10
+      half8  : 93.22
+      half16 : 91.01
+
+    Double-precision compute (GFLOPS)
+      double   : 6.65
+      double2  : 3.36
+      double4  : 20.98
+      double8  : 20.66
+      double16 : 20.38
+
+    Integer compute (GIOPS)
+      int   : 22.60
+      int2  : 48.14
+      int4  : 46.85
+      int8  : 34.22
+      int16 : 47.58
