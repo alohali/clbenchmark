@@ -5,6 +5,7 @@
 
 static const char *stringifiedKernels =
 #include "global_bandwidth_kernels.cl"
+#include "local_bandwidth_kernels.cl"
 #include "compute_sp_kernels.cl"
 #include "compute_hp_kernels.cl"
 #include "compute_dp_kernels.cl"
@@ -106,6 +107,7 @@ int clPeak::runAll()
 
         cl::CommandQueue queue = cl::CommandQueue(ctx, devices[d], CL_QUEUE_PROFILING_ENABLE);
 
+        runLocalBandwidthTest(queue, prog, devInfo);
         runGlobalBandwidthTest(queue, prog, devInfo);
         runComputeSP(queue, prog, devInfo);
         runComputeHP(queue, prog, devInfo);

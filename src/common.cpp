@@ -19,6 +19,7 @@ device_info_t getDeviceInfo(cl::Device &d)
   maxWIPerDim = d.getInfo<CL_DEVICE_MAX_WORK_ITEM_SIZES>();
   devInfo.maxWGSize = (uint)maxWIPerDim[0];
 
+  printf("sys max wg %d\n", (int)devInfo.maxWGSize);
   // Limiting max work-group size to 256
 #define MAX_WG_SIZE 256
   devInfo.maxWGSize = MIN(devInfo.maxWGSize, MAX_WG_SIZE);

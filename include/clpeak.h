@@ -35,6 +35,8 @@ public:
   float run_kernel(cl::CommandQueue &queue, cl::Kernel &kernel, cl::NDRange &globalSize, cl::NDRange &localSize, uint iters);
 
   int runGlobalBandwidthTest(cl::CommandQueue &queue, cl::Program &prog, device_info_t &devInfo);
+  
+  int runLocalBandwidthTest(cl::CommandQueue &queue, cl::Program &prog, device_info_t &devInfo);
 
   int runComputeSP(cl::CommandQueue &queue, cl::Program &prog, device_info_t &devInfo);
 
