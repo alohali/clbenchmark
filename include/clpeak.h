@@ -35,6 +35,7 @@ public:
   float run_kernel(cl::CommandQueue &queue, cl::Kernel &kernel, cl::NDRange &globalSize, cl::NDRange &localSize, uint iters);
 
   int runLocalBandwidthTest(cl::CommandQueue &queue, cl::Program &prog, device_info_t &devInfo);
+  int runTexBandwidthTest(cl::CommandQueue &queue, cl::Program &prog, device_info_t &devInfo);
   int runGlobalBandwidthTest(cl::CommandQueue &queue, cl::Program &prog, device_info_t &devInfo);
   
   int runDW(cl::CommandQueue &queue, cl::Program &prog, device_info_t &devInfo, int w0, int w1);

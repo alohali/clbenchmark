@@ -1,5 +1,5 @@
 #include <clpeak.h>
-
+#undef FETCH_PER_WI
 #define FETCH_PER_WI 16
 
 int clPeak::runGlobalBandwidthTest(cl::CommandQueue &queue, cl::Program &prog, device_info_t &devInfo)

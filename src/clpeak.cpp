@@ -6,6 +6,7 @@
 static const char *stringifiedKernels =
 #include "global_bandwidth_kernels.cl"
 #include "local_bandwidth_kernels.cl"
+#include "tex_bandwidth_kernels.cl"
 #include "compute_sp_kernels.cl"
 #include "compute_hp_kernels.cl"
 #include "compute_dp_kernels.cl"
@@ -124,8 +125,8 @@ int clPeak::runAll()
        // runDW(queue, prog, devInfo, 16, 4);
        // runDW(queue, prog, devInfo, 4, 4);
        // runDW(queue, prog, devInfo, 4, 16);
-       // 
-
+       //
+        runTexBandwidthTest(queue, prog, devInfo);
         runLocalBandwidthTest(queue, prog, devInfo);
         runGlobalBandwidthTest(queue, prog, devInfo);
         runComputeSP(queue, prog, devInfo);
