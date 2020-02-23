@@ -41,7 +41,7 @@ clPeak::~clPeak()
 
 int clPeak::runAll()
 {
-  try
+    try
   {
 #ifdef USE_STUB_OPENCL
     stubOpenclReset();
@@ -132,8 +132,17 @@ int clPeak::runAll()
           continue;
         }
 
+  printf("!!!!!!!!! rundw \n");
         cl::CommandQueue queue = cl::CommandQueue(ctx, devices[d], CL_QUEUE_PROFILING_ENABLE);
-        runDW(queue, prog, devInfo);
+        runDW(queue, prog, devInfo, 240, 1);
+        runDW(queue, prog, devInfo, 8, 8);
+        runDW(queue, prog, devInfo, 4, 8);
+        runDW(queue, prog, devInfo, 4, 16);
+        runDW(queue, prog, devInfo, 8, 16);
+        runDW(queue, prog, devInfo, 16, 8);
+        runDW(queue, prog, devInfo, 16, 4);
+        runDW(queue, prog, devInfo, 4, 4);
+        runDW(queue, prog, devInfo, 4, 16);
         
         log->print(NEWLINE);
         log->xmlCloseTag();       // device

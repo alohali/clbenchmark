@@ -36,7 +36,7 @@ public:
 
   int runGlobalBandwidthTest(cl::CommandQueue &queue, cl::Program &prog, device_info_t &devInfo);
   
-  int runDW(cl::CommandQueue &queue, cl::Program &prog, device_info_t &devInfo);
+  int runDW(cl::CommandQueue &queue, cl::Program &prog, device_info_t &devInfo, int w0, int w1);
   
   int runComputeSP(cl::CommandQueue &queue, cl::Program &prog, device_info_t &devInfo);
 

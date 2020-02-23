@@ -8,8 +8,9 @@ __constant sampler_t SAMPLER = CLK_NORMALIZED_COORDS_FALSE | CLK_ADDRESS_CLAMP |
 
 
 __kernel void depthwise_conv2d_s1(__private const int global_size_dim0, __private const int global_size_dim1,
-                                  __read_only image2d_t input, __read_only image2d_t filter,
+                                  __read_only image2d_t input,
                                   __write_only image2d_t output,
+                                 __global half * restrict w_ptr,
                                   __private const int height,
                                   __private const int width,
                                   __private const int rs,
@@ -65,7 +66,9 @@ __kernel void depthwise_conv2d_s1(__private const int global_size_dim0, __privat
             inWidthIdx = select(inCurIdx + inWidthIdx, -1, (inWidthIdx < 0 || inWidthIdx >= width));
             inValue3  = read_imageh(input, SAMPLER, (int2)(inWidthIdx, inHeightIdx));
 
-            half4 weights = read_imageh(filter, SAMPLER, (int2)(filterIdx, inChannelBlockIdx));
+//            half4 weights = read_imageh(filter, SAMPLER, (int2)(filterIdx, inChannelBlockIdx));
+            half4 weights = vload4(filterIdx + inChannelBlockIdx * 25, w_ptr);
+
 
             outValue0 = mad(inValue0, weights, outValue0);
             outValue1 = mad(inValue1, weights, outValue1);
