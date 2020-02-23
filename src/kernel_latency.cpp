@@ -1,17 +1,16 @@
 #include <clpeak.h>
 
-#define FETCH_PER_WI        16
-
+#define FETCH_PER_WI 16
 
 int clPeak::runKernelLatency(cl::CommandQueue &queue, cl::Program &prog, device_info_t &devInfo)
 {
-  if(!isKernelLatency)
+  if (!isKernelLatency)
     return 0;
 
   cl::Context ctx = queue.getInfo<CL_QUEUE_CONTEXT>();
-  cl_uint numItems = (devInfo.maxWGSize) * (devInfo.numCUs) * FETCH_PER_WI;
-  cl::NDRange globalSize = (numItems / FETCH_PER_WI);
-  cl::NDRange localSize = devInfo.maxWGSize;
+  cl_uint numItems = 2;
+  cl::NDRange globalSize = 2;
+  cl::NDRange localSize = 1;
   uint iters = devInfo.kernelLatencyIters;
   float latency;
 
@@ -33,22 +32,24 @@ int clPeak::runKernelLatency(cl::CommandQueue &queue, cl::Program &prog, device_
     queue.finish();
 
     latency = 0;
-    for(uint i=0; i<iters; i++)
+    cl::Event timeEvent;
+    for (uint i = 0; i < iters; i++)
     {
-      cl::Event timeEvent;
       queue.enqueueNDRangeKernel(kernel_v1, cl::NullRange, globalSize, localSize, NULL, &timeEvent);
-      queue.finish();
-      cl_ulong start = timeEvent.getProfilingInfo<CL_PROFILING_COMMAND_QUEUED>() / 1000;
-      cl_ulong end = timeEvent.getProfilingInfo<CL_PROFILING_COMMAND_START>() / 1000;
-      latency += (float)((int)end - (int)start);
     }
+
+    queue.finish();
+    cl_ulong start = timeEvent.getProfilingInfo<CL_PROFILING_COMMAND_QUEUED>() / 1000;
+    cl_ulong end = timeEvent.getProfilingInfo<CL_PROFILING_COMMAND_START>() / 1000;
+    latency = (float)((int)end - (int)start);
     latency /= static_cast<float>(iters);
 
-    log->print(latency);    log->print(" us" NEWLINE);
+    log->print(latency);
+    log->print(" us" NEWLINE);
     log->xmlSetContent(latency);
     log->xmlCloseTag();
   }
-  catch(cl::Error &error)
+  catch (cl::Error &error)
   {
     stringstream ss;
     ss << error.what() << " (" << error.err() << ")" NEWLINE
@@ -59,4 +60,3 @@ int clPeak::runKernelLatency(cl::CommandQueue &queue, cl::Program &prog, device_
 
   return 0;
 }
-

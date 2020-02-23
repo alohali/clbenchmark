@@ -1,0 +1,46 @@
+Platform: ARM Platform
+Device: Mali-G72
+Driver version  : 2.0 (Android)
+Compute units   : 12
+Clock frequency : 5 MHz
+
+Global memory bandwidth (GBPS)
+float   : 17.86
+float2  : 17.50
+float4  : 17.91
+float8  : 11.08
+float16 : 5.29
+
+Single-precision compute (GFLOPS)
+float   : 219.71
+float2  : 219.38
+float4  : 219.22
+float8  : 218.50
+float16 : 202.75
+
+Half-precision compute (GFLOPS)
+half   : 219.48
+half2  : 435.24
+half4  : 434.54
+half8  : 431.50
+half16 : 428.10
+
+No double precision support! Skipped
+
+Integer compute (GIOPS)
+int   : 205.66
+int2  : 211.65
+int4  : 214.66
+int8  : 214.69
+int16 : 167.99
+
+Transfer bandwidth (GBPS)
+enqueueWriteBuffer         : 8.56
+enqueueReadBuffer          : 8.82
+enqueueMapBuffer(for read) : 264.93
+memcpy from mapped ptr   : 6.38
+enqueueUnmap(after write)  : 471.31
+memcpy to mapped ptr     : 8.96
+
+Kernel launch latency : 128.28 us
+    
