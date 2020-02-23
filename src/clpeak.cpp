@@ -5,15 +5,11 @@
 
 static const char *stringifiedKernels =
 #include "global_bandwidth_kernels.cl"
-<<<<<<< HEAD
-=======
 #include "local_bandwidth_kernels.cl"
->>>>>>> c610cc767a61d4bb5fed47c0fe4a0daeba5df2e3
 #include "compute_sp_kernels.cl"
 #include "compute_hp_kernels.cl"
 #include "compute_dp_kernels.cl"
 #include "compute_integer_kernels.cl"
-<<<<<<< HEAD
 #include "dw_hp_kernels.cl"
     ;
 
@@ -23,8 +19,6 @@ static const char *stringifiedKernelsNoInt =
 #include "compute_hp_kernels.cl"
 #include "compute_dp_kernels.cl"
 #include "dw_hp_kernels.cl"
-=======
->>>>>>> c610cc767a61d4bb5fed47c0fe4a0daeba5df2e3
     ;
 
 #ifdef USE_STUB_OPENCL
