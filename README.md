@@ -1,8 +1,5 @@
 # clpeak
 
-[![Build Status](https://travis-ci.com/krrishnarraj/clpeak.svg?branch=master)](https://travis-ci.com/krrishnarraj/clpeak)
-[![Snap Status](https://build.snapcraft.io/badge/krrishnarraj/clpeak.svg)](https://build.snapcraft.io/user/krrishnarraj/clpeak)
-
 A synthetic benchmarking tool to measure peak capabilities of opencl devices. It only measures the peak metrics that can be achieved using vector operations and does not represent a real-world use case
 
 ## Building
@@ -18,49 +15,62 @@ cmake --build .
 ## Sample
 
 ```text
-Platform: NVIDIA CUDA
-  Device: Tesla V100-SXM2-16GB
-    Driver version  : 390.77 (Linux x64)
-    Compute units   : 80
-    Clock frequency : 1530 MHz
+
+Platform: ARM Platform
+sys max wg 384
+  Device: Mali-G76
+    Driver version  : 2.0 (Android)
+    Compute units   : 10
+    Clock frequency : 5 MHz
+
+    TEX memory bandwidth (GBPS)
+local size: 256
+global size: 1310720
+      l1 tex float4  : 124.49
+      l2 tex float4  : 71.55
+
+    local memory bandwidth (GBPS)
+local size: 256
+global size: 1310720
+      l1 float  : 110.27
+      l2 float  : 27.37
+      l1float2  : 112.49
+      l2float2  : 45.09
+      float4  : 111.14
+      l2float4  : 50.78
+      float8  : 111.93
+      l2float8  : 26.19
+      float16 : 69.23
+      l2float16  : 13.23
 
     Global memory bandwidth (GBPS)
-      float   : 767.48
-      float2  : 810.81
-      float4  : 843.06
-      float8  : 726.12
-      float16 : 735.98
+      float   : 20.83
+      float2  : 21.22
+      float4  : 21.65
+      float8  : 11.54
+      float16 : 5.63
 
     Single-precision compute (GFLOPS)
-      float   : 15680.96
-      float2  : 15674.50
-      float4  : 15645.58
-      float8  : 15583.27
-      float16 : 15466.50
+      float   : 340.96
+      float2  : 339.92
+      float4  : 341.17
+      float8  : 340.00
+      float16 : 332.40
 
-    No half precision support! Skipped
-
-    Double-precision compute (GFLOPS)
-      double   : 7859.49
-      double2  : 7849.96
-      double4  : 7832.96
-      double8  : 7799.82
-      double16 : 7740.88
-
-    Integer compute (GIOPS)
-      int   : 15653.47
-      int2  : 15654.40
-      int4  : 15655.21
-      int8  : 15659.04
-      int16 : 15608.65
+    Half-precision compute (GFLOPS)
+      half   : 340.23
+      half2  : 673.04
+      half4  : 670.97
+      half8  : 666.97
+      half16 : 658.51
 
     Transfer bandwidth (GBPS)
-      enqueueWriteBuffer         : 10.64
-      enqueueReadBuffer          : 11.92
-      enqueueMapBuffer(for read) : 9.97
-        memcpy from mapped ptr   : 8.62
-      enqueueUnmap(after write)  : 11.04
-        memcpy to mapped ptr     : 9.16
+      enqueueWriteBuffer         : 6.78
+      enqueueReadBuffer          : 8.24
+      enqueueMapBuffer(for read) : 16.48
+        memcpy from mapped ptr   : 9.05
+      enqueueUnmap(after write)  : 15.75
+        memcpy to mapped ptr     : 7.71
 
-    Kernel launch latency : 7.22 us
-```
+    Kernel launch latency : 7.12 us
+

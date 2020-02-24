@@ -1,160 +1,61 @@
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/squeezenet_v1.0.onnx.opt.onnx.rapidproto -dl 1,2 -th 1
-time cost: min =   538.043 ms  |  max =  553.224 ms  |  avg = 544.207 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/squeezenet_v1.0.onnx.opt.onnx.rapidproto -dl 1,2 -th 1
-time cost: min =   431.793 ms  |  max =  443.732 ms  |  avg = 436.141 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/squeezenet_v1.0.onnx.opt.onnx.rapidproto -dl 1,2 -th 2
-time cost: min =   308.86 ms  |  max =  328.264 ms  |  avg = 315.225 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/squeezenet_v1.0.onnx.opt.onnx.rapidproto -dl 1,2 -th 2
-time cost: min =   248.326 ms  |  max =  254.024 ms  |  avg = 250.447 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/squeezenet_v1.0.onnx.opt.onnx.rapidproto -dl 4,5 -th 1
-time cost: min =   139.092 ms  |  max =  155.947 ms  |  avg = 145.525 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/squeezenet_v1.0.onnx.opt.onnx.rapidproto -dl 4,5 -th 1
-time cost: min =   127.471 ms  |  max =  141.771 ms  |  avg = 132.67 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/squeezenet_v1.0.onnx.opt.onnx.rapidproto -dl 4,5 -th 2
-time cost: min =   80.368 ms  |  max =  101.609 ms  |  avg = 84.8237 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/squeezenet_v1.0.onnx.opt.onnx.rapidproto -dl 4,5 -th 2
-time cost: min =   77.27 ms  |  max =  89.585 ms  |  avg = 80.0055 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/mobilenet_v1.onnx.opt.onnx.rapidproto -dl 1,2 -th 1
-time cost: min =   402.692 ms  |  max =  421.648 ms  |  avg = 409.443 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/mobilenet_v1.onnx.opt.onnx.rapidproto -dl 1,2 -th 1
-time cost: min =   294.972 ms  |  max =  304.387 ms  |  avg = 298.651 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/mobilenet_v1.onnx.opt.onnx.rapidproto -dl 1,2 -th 2
-time cost: min =   212.356 ms  |  max =  228.886 ms  |  avg = 215.453 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/mobilenet_v1.onnx.opt.onnx.rapidproto -dl 1,2 -th 2
-time cost: min =   157.992 ms  |  max =  164.588 ms  |  avg = 159.96 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/mobilenet_v1.onnx.opt.onnx.rapidproto -dl 4,5 -th 1
-time cost: min =   106.835 ms  |  max =  117.983 ms  |  avg = 110.929 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/mobilenet_v1.onnx.opt.onnx.rapidproto -dl 4,5 -th 1
-time cost: min =   101.214 ms  |  max =  115.684 ms  |  avg = 105.997 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/mobilenet_v1.onnx.opt.onnx.rapidproto -dl 4,5 -th 2
-time cost: min =   61.219 ms  |  max =  70.569 ms  |  avg = 64.2341 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/mobilenet_v1.onnx.opt.onnx.rapidproto -dl 4,5 -th 2
-time cost: min =   57.635 ms  |  max =  66.908 ms  |  avg = 61.0004 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/mobilenet_v2.onnx.opt.onnx.rapidproto -dl 1,2 -th 1
-time cost: min =   350.053 ms  |  max =  363.092 ms  |  avg = 354.296 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/mobilenet_v2.onnx.opt.onnx.rapidproto -dl 1,2 -th 1
-time cost: min =   286.165 ms  |  max =  299.15 ms  |  avg = 290.114 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/mobilenet_v2.onnx.opt.onnx.rapidproto -dl 1,2 -th 2
-time cost: min =   183.362 ms  |  max =  215.646 ms  |  avg = 187.316 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/mobilenet_v2.onnx.opt.onnx.rapidproto -dl 1,2 -th 2
-time cost: min =   132.356 ms  |  max =  155.404 ms  |  avg = 144.543 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/mobilenet_v2.onnx.opt.onnx.rapidproto -dl 4,5 -th 1
-time cost: min =   102.078 ms  |  max =  121.353 ms  |  avg = 113.427 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/mobilenet_v2.onnx.opt.onnx.rapidproto -dl 4,5 -th 1
-time cost: min =   97.329 ms  |  max =  111.567 ms  |  avg = 105.064 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/mobilenet_v2.onnx.opt.onnx.rapidproto -dl 4,5 -th 2
-time cost: min =   58.129 ms  |  max =  90.008 ms  |  avg = 65.3713 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/mobilenet_v2.onnx.opt.onnx.rapidproto -dl 4,5 -th 2
-time cost: min =   57.339 ms  |  max =  63.875 ms  |  avg = 59.1196 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/resnet50.onnx.opt.onnx.rapidproto -dl 1,2 -th 1
-time cost: min =   2192.78 ms  |  max =  2227.56 ms  |  avg = 2210.02 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/resnet50.onnx.opt.onnx.rapidproto -dl 1,2 -th 1
-time cost: min =   1757.7 ms  |  max =  1806.68 ms  |  avg = 1772.68 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/resnet50.onnx.opt.onnx.rapidproto -dl 1,2 -th 2
-time cost: min =   1269.55 ms  |  max =  1302.3 ms  |  avg = 1283.72 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/resnet50.onnx.opt.onnx.rapidproto -dl 1,2 -th 2
-time cost: min =   1069.27 ms  |  max =  1109.89 ms  |  avg = 1093.42 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/resnet50.onnx.opt.onnx.rapidproto -dl 4,5 -th 1
-time cost: min =   568.923 ms  |  max =  602.125 ms  |  avg = 581.301 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/resnet50.onnx.opt.onnx.rapidproto -dl 4,5 -th 1
-time cost: min =   555.964 ms  |  max =  589.088 ms  |  avg = 573.43 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/resnet50.onnx.opt.onnx.rapidproto -dl 4,5 -th 2
-time cost: min =   339.713 ms  |  max =  404.774 ms  |  avg = 361.73 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/resnet50.onnx.opt.onnx.rapidproto -dl 4,5 -th 2
-time cost: min =   339.489 ms  |  max =  389.68 ms  |  avg = 372.258 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/inception_v3.onnx.opt.onnx.rapidproto -dl 1,2 -th 1
-time cost: min =   5557.47 ms  |  max =  5688.53 ms  |  avg = 5607.81 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/inception_v3.onnx.opt.onnx.rapidproto -dl 1,2 -th 1
-time cost: min =   4139.53 ms  |  max =  4234.47 ms  |  avg = 4195.34 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/inception_v3.onnx.opt.onnx.rapidproto -dl 1,2 -th 2
-time cost: min =   3097.12 ms  |  max =  3147.75 ms  |  avg = 3119.94 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/inception_v3.onnx.opt.onnx.rapidproto -dl 1,2 -th 2
-time cost: min =   2394.75 ms  |  max =  2447.81 ms  |  avg = 2421.61 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/inception_v3.onnx.opt.onnx.rapidproto -dl 4,5 -th 1
-time cost: min =   1461.44 ms  |  max =  1522.29 ms  |  avg = 1494.82 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/inception_v3.onnx.opt.onnx.rapidproto -dl 4,5 -th 1
-time cost: min =   1233.57 ms  |  max =  1279.85 ms  |  avg = 1266.88 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/inception_v3.onnx.opt.onnx.rapidproto -dl 4,5 -th 2
-time cost: min =   832.712 ms  |  max =  870.475 ms  |  avg = 853.413 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/inception_v3.onnx.opt.onnx.rapidproto -dl 4,5 -th 2
-time cost: min =   740.298 ms  |  max =  781.509 ms  |  avg = 757.924 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qmobilenetv1.rapidproto -dl 1,2 -th 1
-time cost: min =   306.256 ms  |  max =  320.376 ms  |  avg = 310.051 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qmobilenetv1.rapidproto -dl 1,2 -th 1
-time cost: min =   197.734 ms  |  max =  216.672 ms  |  avg = 201.674 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qmobilenetv1.rapidproto -dl 1,2 -th 2
-time cost: min =   61.631 ms  |  max =  70.032 ms  |  avg = 66.051 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qmobilenetv1.rapidproto -dl 1,2 -th 2
-time cost: min =   46.535 ms  |  max =  49.101 ms  |  avg = 47.6822 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qmobilenetv1.rapidproto -dl 4,5 -th 1
-time cost: min =   69.036 ms  |  max =  69.49 ms  |  avg = 69.1413 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qmobilenetv1.rapidproto -dl 4,5 -th 1
-time cost: min =   55.169 ms  |  max =  55.534 ms  |  avg = 55.282 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qmobilenetv1.rapidproto -dl 4,5 -th 2
-time cost: min =   35.731 ms  |  max =  35.831 ms  |  avg = 35.7749 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qmobilenetv1.rapidproto -dl 4,5 -th 2
-time cost: min =   28.782 ms  |  max =  28.952 ms  |  avg = 28.8343 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qmobilenetv2.rapidproto -dl 1,2 -th 1
-time cost: min =   305.025 ms  |  max =  316.429 ms  |  avg = 308.556 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qmobilenetv2.rapidproto -dl 1,2 -th 1
-time cost: min =   192.014 ms  |  max =  207.094 ms  |  avg = 195.074 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qmobilenetv2.rapidproto -dl 1,2 -th 2
-time cost: min =   65.769 ms  |  max =  110.8 ms  |  avg = 72.4493 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qmobilenetv2.rapidproto -dl 1,2 -th 2
-time cost: min =   47.041 ms  |  max =  49.113 ms  |  avg = 48.0046 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qmobilenetv2.rapidproto -dl 4,5 -th 1
-time cost: min =   72.052 ms  |  max =  72.493 ms  |  avg = 72.2846 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qmobilenetv2.rapidproto -dl 4,5 -th 1
-time cost: min =   53.763 ms  |  max =  54.809 ms  |  avg = 53.9265 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qmobilenetv2.rapidproto -dl 4,5 -th 2
-time cost: min =   37.404 ms  |  max =  53.613 ms  |  avg = 40.0673 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qmobilenetv2.rapidproto -dl 4,5 -th 2
-time cost: min =   28.156 ms  |  max =  28.299 ms  |  avg = 28.1936 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qsqueezenetv1.0.rapidproto -dl 1,2 -th 1
-time cost: min =   455.095 ms  |  max =  465.227 ms  |  avg = 458.695 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qsqueezenetv1.0.rapidproto -dl 1,2 -th 1
-time cost: min =   305.17 ms  |  max =  313.377 ms  |  avg = 307.977 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qsqueezenetv1.0.rapidproto -dl 1,2 -th 2
-time cost: min =   89.237 ms  |  max =  104.255 ms  |  avg = 97.7447 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qsqueezenetv1.0.rapidproto -dl 1,2 -th 2
-time cost: min =   69.997 ms  |  max =  72.711 ms  |  avg = 71.802 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qsqueezenetv1.0.rapidproto -dl 4,5 -th 1
-time cost: min =   101.905 ms  |  max =  102.689 ms  |  avg = 102.382 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qsqueezenetv1.0.rapidproto -dl 4,5 -th 1
-time cost: min =   83.334 ms  |  max =  84.174 ms  |  avg = 83.5126 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qsqueezenetv1.0.rapidproto -dl 4,5 -th 2
-time cost: min =   52.329 ms  |  max =  52.689 ms  |  avg = 52.3976 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qsqueezenetv1.0.rapidproto -dl 4,5 -th 2
-time cost: min =   42.533 ms  |  max =  45.849 ms  |  avg = 42.7594 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qresnet50.rapidproto -dl 1,2 -th 1
-time cost: min =   1845.54 ms  |  max =  1868.49 ms  |  avg = 1856.24 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qresnet50.rapidproto -dl 1,2 -th 1
-time cost: min =   1256.2 ms  |  max =  1271.78 ms  |  avg = 1263.75 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qresnet50.rapidproto -dl 1,2 -th 2
-time cost: min =   377.58 ms  |  max =  455.915 ms  |  avg = 393.568 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qresnet50.rapidproto -dl 1,2 -th 2
-time cost: min =   286.88 ms  |  max =  298.136 ms  |  avg = 293.139 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qresnet50.rapidproto -dl 4,5 -th 1
-time cost: min =   424.758 ms  |  max =  446.048 ms  |  avg = 436.931 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qresnet50.rapidproto -dl 4,5 -th 1
-time cost: min =   360.435 ms  |  max =  375.365 ms  |  avg = 363.944 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qresnet50.rapidproto -dl 4,5 -th 2
-time cost: min =   216.706 ms  |  max =  227.825 ms  |  avg = 220.694 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qresnet50.rapidproto -dl 4,5 -th 2
-time cost: min =   187.288 ms  |  max =  195.971 ms  |  avg = 189.464 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qinception_v3.rapidproto -dl 1,2 -th 1
-time cost: min =   4764.17 ms  |  max =  4817.66 ms  |  avg = 4780.66 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qinception_v3.rapidproto -dl 1,2 -th 1
-time cost: min =   3172.11 ms  |  max =  3215.17 ms  |  avg = 3187.44 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qinception_v3.rapidproto -dl 1,2 -th 2
-time cost: min =   1056.05 ms  |  max =  1182.51 ms  |  avg = 1103.46 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qinception_v3.rapidproto -dl 1,2 -th 2
-time cost: min =   731.536 ms  |  max =  748.537 ms  |  avg = 739.857 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qinception_v3.rapidproto -dl 4,5 -th 1
-time cost: min =   1071.71 ms  |  max =  1075.28 ms  |  avg = 1072.83 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qinception_v3.rapidproto -dl 4,5 -th 1
-time cost: min =   873.767 ms  |  max =  880.942 ms  |  avg = 875.306 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qinception_v3.rapidproto -dl 4,5 -th 2
-time cost: min =   579.062 ms  |  max =  610.178 ms  |  avg = 590.487 ms 
-./RapidnetTest -wc 10 -ic 20 -dt ARM -mp ../model/qinception_v3.rapidproto -dl 4,5 -th 2
-time cost: min =   451.511 ms  |  max =  469.572 ms  |  avg = 454.705 ms 
+
+Platform: ARM Platform
+sys max wg 384
+  Device: Mali-G72
+    Driver version  : 2.0 (Android)
+    Compute units   : 12
+    Clock frequency : 5 MHz
+
+    TEX memory bandwidth (GBPS)
+local size: 256
+global size: 1572864
+      l1 tex float4  : 63.50
+      l1 tex float4 v2 : 73.43
+      l1 tex float4 v3 : 72.57
+      l2 tex float4  : 63.44
+
+    local memory bandwidth (GBPS)
+local size: 256
+global size: 1572864
+      l1 float  : 96.61
+      l2 float  : 36.95
+      l1float2  : 145.70
+      l2float2  : 37.02
+      float4  : 146.28
+      l2float4  : 45.37
+      float8  : 73.12
+      l2float8  : 33.10
+      float16 : 78.91
+      l2float16  : 14.23
+
+    Global memory bandwidth (GBPS)
+      float   : 18.95
+      float2  : 18.56
+      float4  : 18.85
+      float8  : 11.55
+      float16 : 5.46
+
+    Single-precision compute (GFLOPS)
+      float   : 220.04
+      float2  : 219.84
+      float4  : 219.73
+      float8  : 218.97
+      float16 : 203.13
+
+    Half-precision compute (GFLOPS)
+      half   : 220.15
+      half2  : 437.63
+      half4  : 436.35
+      half8  : 433.85
+      half16 : 429.74
+
+    Transfer bandwidth (GBPS)
+      enqueueWriteBuffer         : 9.18
+      enqueueReadBuffer          : 9.38
+      enqueueMapBuffer(for read) : 282563.66
+        memcpy from mapped ptr   : 6.84
+      enqueueUnmap(after write)  : 335544.31
+        memcpy to mapped ptr     : 9.24
+
+    Kernel launch latency : 132.33 us
+
