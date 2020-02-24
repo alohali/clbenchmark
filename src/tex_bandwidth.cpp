@@ -18,20 +18,18 @@ int clPeak::runTexBandwidthTest(cl::CommandQueue &queue, cl::Program &prog, devi
   try
   {
       localSize = devInfo.maxWGSize;
-      arr = new float[numItems];
+      arr = new float[128 * 1024 * 16];
       populate(arr, numItems);
 
       log->print(NEWLINE TAB TAB "TEX memory bandwidth (GBPS)" NEWLINE);
       log->xmlOpenTag("local_memory_bandwidth");
       log->xmlAppendAttribs("unit", "gbps");
 
-      cl::Image1D inputImage = cl::Image1D(ctx, CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR, cl::ImageFormat(CL_RGBA, CL_FLOAT), 256 * 256, arr);
+      cl::Image1D inputImage = cl::Image1D(ctx, CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR, cl::ImageFormat(CL_RGBA, CL_FLOAT), 256 * 32, arr);
       cl::Buffer outputBuf = cl::Buffer(ctx, CL_MEM_WRITE_ONLY, (numItems * sizeof(float)));
 
       cl::Kernel kernel_v1_l1(prog, "tex_bandwidth_v4_local_offset");
       kernel_v1_l1.setArg(0, inputImage), kernel_v1_l1.setArg(1, outputBuf), kernel_v1_l1.setArg(2, 0);
-      cl::Kernel kernel_v1_l2(prog, "tex_bandwidth_v4_local_offset");
-      kernel_v1_l2.setArg(0, inputImage), kernel_v1_l2.setArg(1, outputBuf), kernel_v1_l2.setArg(2, 256);
 
       log->print("local size: ");
       log->print(devInfo.maxWGSize);
@@ -51,8 +49,24 @@ int clPeak::runTexBandwidthTest(cl::CommandQueue &queue, cl::Program &prog, devi
       log->print(gbps);
       log->print(NEWLINE);
 
+      kernel_v1_l1.setArg(2, 1);
+      log->print(TAB TAB TAB "l1 tex float4 v2 : ");
+      timed = run_kernel(queue, kernel_v1_l1, globalSize, localSize, iters);
+      gbps = ((float)numItems * sizeof(float) * TEX_ELE_PER_WI) / timed / 1e3f;
+      log->print(gbps);
+      log->print(NEWLINE);
+      log->xmlRecord("float4", gbps);
+      kernel_v1_l1.setArg(2, 4);
+      log->print(TAB TAB TAB "l1 tex float4 v3 : ");
+      timed = run_kernel(queue, kernel_v1_l1, globalSize, localSize, iters);
+      gbps = ((float)numItems * sizeof(float) * TEX_ELE_PER_WI) / timed / 1e3f;
+      log->print(gbps);
+      log->print(NEWLINE);
+      log->xmlRecord("float4", gbps);
+
+      kernel_v1_l1.setArg(2, 16);
       log->print(TAB TAB TAB "l2 tex float4  : ");
-      timed = run_kernel(queue, kernel_v1_l2, globalSize, localSize, iters);
+      timed = run_kernel(queue, kernel_v1_l1, globalSize, localSize, iters);
       gbps = ((float)numItems * sizeof(float) * TEX_ELE_PER_WI) / timed / 1e3f;
       log->print(gbps);
       log->print(NEWLINE);
