@@ -1,0 +1,59 @@
+
+Platform: QUALCOMM Snapdragon(TM)
+sys max wg 1024
+  Device: QUALCOMM Adreno(TM)
+    Driver version  : OpenCL 2.0 QUALCOMM build: commit #f4471f2 changeid #I3387004788 Date: 08/14/18 Tue Local Branch: mybranch35268460 Remote Branch: quic/gfx-adreno.lnx.1.0.r47-rel Compiler E031.36.02.00 (Android)
+    Compute units   : 2
+    Clock frequency : 1 MHz
+
+    TEX memory bandwidth (GBPS)
+local size: 256
+global size: 262144
+      l1 tex float4  : 85.76
+      l2 tex float4  : 84.29
+
+    local memory bandwidth (GBPS)
+local size: 256
+global size: 262144
+      l1 float  : 54.33
+      l2 float  : 43.14
+      l1float2  : 79.86
+      l2float2  : 61.94
+      float4  : 80.65
+      l2float4  : 61.75
+      float8  : 44.19
+      l2float8  : 37.29
+      float16 : 44.60
+      l2float16  : 40.05
+
+    Global memory bandwidth (GBPS)
+      float   : 22.95
+      float2  : 23.80
+      float4  : 23.95
+      float8  : 22.20
+      float16 : 21.44
+
+    Single-precision compute (GFLOPS)
+      float   : 424.84
+      float2  : 451.40
+      float4  : 385.63
+      float8  : 470.19
+      float16 : 470.09
+
+    Half-precision compute (GFLOPS)
+      half   : 604.84
+      half2  : 656.07
+      half4  : 675.49
+      half8  : 691.47
+      half16 : 691.73
+
+    Transfer bandwidth (GBPS)
+      enqueueWriteBuffer         : 7.58
+      enqueueReadBuffer          : 8.17
+      enqueueMapBuffer(for read) : 1256.78
+        memcpy from mapped ptr   : 8.35
+      enqueueUnmap(after write)  : 615.71
+        memcpy to mapped ptr     : 8.24
+
+    Kernel launch latency : 0.07 us
+
