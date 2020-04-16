@@ -8,10 +8,10 @@ int clPeak::runKernelLatency(cl::CommandQueue &queue, cl::Program &prog, device_
     return 0;
 
   cl::Context ctx = queue.getInfo<CL_QUEUE_CONTEXT>();
-  cl_uint numItems = 2;
-  cl::NDRange globalSize = 2;
-  cl::NDRange localSize = 1;
-  uint iters = devInfo.kernelLatencyIters;
+  cl_uint numItems = 1024;
+  cl::NDRange globalSize = 8;
+  cl::NDRange localSize = 4;
+  uint iters = 10000;
   float latency;
 
   try
@@ -31,20 +31,22 @@ int clPeak::runKernelLatency(cl::CommandQueue &queue, cl::Program &prog, device_
     queue.enqueueNDRangeKernel(kernel_v1, cl::NullRange, globalSize, localSize);
     queue.finish();
 
+    Timer timer;
+
+    timer.start();
     latency = 0;
     cl::Event timeEvent;
     for (uint i = 0; i < iters; i++)
     {
       queue.enqueueNDRangeKernel(kernel_v1, cl::NullRange, globalSize, localSize, NULL, &timeEvent);
+      queue.finish();
     }
 
     queue.finish();
-    cl_ulong start = timeEvent.getProfilingInfo<CL_PROFILING_COMMAND_QUEUED>() / 1000;
-    cl_ulong end = timeEvent.getProfilingInfo<CL_PROFILING_COMMAND_START>() / 1000;
-    latency = (float)((int)end - (int)start);
-    latency /= static_cast<float>(iters);
+    float timed = timer.stopAndTime();
+    timed /= static_cast<float>(iters);
 
-    log->print(latency);
+    log->print(timed);
     log->print(" us" NEWLINE);
     log->xmlSetContent(latency);
     log->xmlCloseTag();
